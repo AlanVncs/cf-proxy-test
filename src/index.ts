@@ -1,3 +1,5 @@
+import proxy from "./proxy/vtex";
+
 /**
  * Welcome to Cloudflare Workers! This is your first worker.
  *
@@ -13,6 +15,6 @@
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello World!');
+		return proxy({ request });
 	},
 } satisfies ExportedHandler<Env>;
