@@ -1,4 +1,4 @@
-import proxy from "./proxy/vtex";
+import proxy from './proxy/vtex';
 
 /**
  * Welcome to Cloudflare Workers! This is your first worker.
@@ -15,6 +15,10 @@ import proxy from "./proxy/vtex";
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		return proxy({ request });
+		const response = await proxy(request, env);
+
+		if (typeof response === 'undefined') return new Response('Erro ao montar a requisição');
+
+		return response;
 	},
 } satisfies ExportedHandler<Env>;

@@ -10,6 +10,8 @@
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
+    "@types/cookie": "^0.6.0",
+    "@types/set-cookie-parser": "^2.4.10",
     "@cloudflare/vitest-pool-workers": "^0.4.5",
     "@cloudflare/workers-types": "^4.20240815.0",
     "typescript": "^5.5.2",
@@ -17,7 +19,7 @@
     "wrangler": "^3.60.3"
   },
   "dependencies": {
-    "@types/cookie": "^0.6.0",
-    "cookie": "^0.6.0"
+    "cookie": "^0.6.0",
+    "set-cookie-parser": "^2.7.0"
   }
 }
